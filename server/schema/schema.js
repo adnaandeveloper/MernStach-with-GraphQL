@@ -112,6 +112,7 @@ const mutation = new GraphQLObjectType({
             project.remove();
           });
         });
+
         return Client.findByIdAndRemove(args.id);
       },
     },

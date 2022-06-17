@@ -23,10 +23,11 @@ export default function Clients() {
 
   if (loading) return <Spinner />;
   if (error) return <p>Something went wrong</p>;
+  console.log(data.clients.length);
 
   return (
     <>
-      {!loading && !error && (
+      {!loading && !error && data.clients.length ? (
         <table className="table table-hover mt-3">
           <thead>
             <tr>
@@ -42,6 +43,8 @@ export default function Clients() {
             ))}
           </tbody>
         </table>
+      ) : (
+        <h5>No clients created yet</h5>
       )}
     </>
   );
